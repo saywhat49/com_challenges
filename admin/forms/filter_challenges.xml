@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form addfieldprefix="Fede\Component\Challenges\Administrator\Field">
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			inputmode="search"
+			label="COM_CHALLENGES_FILTER_SEARCH_LABEL"
+			description="COM_CHALLENGES_FILTER_SEARCH_DESC"
+			hint="JSEARCH_FILTER"
+		/>
+
+		<field
+			name="status"
+			type="list"
+			label="JSTATUS"
+			class="js-select-submit-on-change"
+			validate="options"
+			>
+			<option value="">COM_CHALLENGES_SELECT_STATUS</option>
+			<option value="0">COM_CHALLENGES_STATUS_DRAFT</option>
+			<option value="1">COM_CHALLENGES_STATUS_PENDING</option>
+			<option value="2">COM_CHALLENGES_STATUS_PUBLISHED</option>
+			<option value="3">COM_CHALLENGES_STATUS_REFUSED</option>
+			<option value="4">COM_CHALLENGES_STATUS_CANCELLED</option>
+			<option value="5">COM_CHALLENGES_STATUS_ARCHIVED</option>
+		</field>
+
+		<field
+			name="secteur_id"
+			type="secteur"
+			label="COM_CHALLENGES_HEADING_SECTEUR"
+			class="js-select-submit-on-change"
+			>
+			<option value="">COM_CHALLENGES_SELECT_SECTEUR</option>
+		</field>
+
+		<field
+			name="type_id"
+			type="sql"
+			label="COM_CHALLENGES_HEADING_TYPE"
+			class="js-select-submit-on-change"
+			query="SELECT id, title FROM #__challenges_types ORDER BY ordering, title"
+			key_field="id"
+			value_field="title"
+			>
+			<option value="">COM_CHALLENGES_SELECT_TYPE</option>
+		</field>
+	</fields>
+
+	<fields name="list">
+		<field
+			name="fullordering"
+			type="list"
+			label="JGLOBAL_SORT_BY"
+			class="js-select-submit-on-change"
+			default="a.start_datetime ASC"
+			validate="options"
+			>
+			<option value="">JGLOBAL_SORT_BY</option>
+			<option value="a.status ASC">JSTATUS_ASC</option>
+			<option value="a.status DESC">JSTATUS_DESC</option>
+			<option value="a.title ASC">COM_CHALLENGES_HEADING_TITLE_ASC</option>
+			<option value="a.title DESC">COM_CHALLENGES_HEADING_TITLE_DESC</option>
+			<option value="a.start_datetime ASC">COM_CHALLENGES_HEADING_START_ASC</option>
+			<option value="a.start_datetime DESC">COM_CHALLENGES_HEADING_START_DESC</option>
+			<option value="a.id ASC">JGRID_HEADING_ID_ASC</option>
+			<option value="a.id DESC">JGRID_HEADING_ID_DESC</option>
+		</field>
+
+		<field
+			name="limit"
+			type="limitbox"
+			label="JGLOBAL_LIST_LIMIT"
+			default="25"
+			class="js-select-submit-on-change"
+		/>
+	</fields>
+</form>

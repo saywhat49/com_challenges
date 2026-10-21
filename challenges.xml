@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" method="upgrade">
+	<name>com_challenges</name>
+	<author>Fédération Française de Boule de Fort</author>
+	<creationDate>2026-10</creationDate>
+	<copyright>(C) 2026 Fédération Française de Boule de Fort</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.3.0</version>
+	<description>COM_CHALLENGES_XML_DESCRIPTION</description>
+	<namespace path="src">Fede\Component\Challenges</namespace>
+	<scriptfile>script.php</scriptfile>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<!-- Aucun bloc <uninstall><sql> : les tables ne sont supprimées que sur option explicite (voir script.php). -->
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+
+	<administration>
+		<menu img="class:calendar">COM_CHALLENGES</menu>
+		<submenu>
+			<menu link="option=com_challenges&amp;view=challenges" view="challenges" img="class:calendar">COM_CHALLENGES_MENU_CHALLENGES</menu>
+			<menu link="option=com_challenges&amp;view=types" view="types" img="class:tags">COM_CHALLENGES_MENU_TYPES</menu>
+		</submenu>
+		<files folder="admin">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<folder>forms</folder>
+			<folder>services</folder>
+			<folder>sql</folder>
+			<folder>src</folder>
+			<folder>tmpl</folder>
+		</files>
+		<languages folder="admin">
+			<language tag="fr-FR">language/fr-FR/com_challenges.ini</language>
+			<language tag="fr-FR">language/fr-FR/com_challenges.sys.ini</language>
+		</languages>
+	</administration>
+	<updateservers>
+		<server type="extension" priority="1" name="Challenges - Fédération Française de Boule de Fort">https://raw.githubusercontent.com/saywhat49/com_challenges/main/update.xml</server>
+	</updateservers>
+</extension>

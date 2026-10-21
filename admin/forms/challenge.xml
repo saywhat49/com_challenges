@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="details" addfieldprefix="Fede\Component\Challenges\Administrator\Field">
+		<field name="id" type="hidden" default="0" readonly="true" />
+
+		<field
+			name="title"
+			type="text"
+			label="COM_CHALLENGES_FIELD_TITLE_LABEL"
+			required="true"
+			maxlength="255"
+			size="60"
+		/>
+
+		<field
+			name="alias"
+			type="text"
+			label="JFIELD_ALIAS_LABEL"
+			description="JFIELD_ALIAS_DESC"
+			hint="JFIELD_ALIAS_PLACEHOLDER"
+			maxlength="190"
+		/>
+
+		<field
+			name="societe_id"
+			type="societe"
+			label="COM_CHALLENGES_FIELD_SOCIETE_ID_LABEL"
+			description="COM_CHALLENGES_FIELD_SOCIETE_ID_DESC"
+			required="true"
+			>
+			<option value="">COM_CHALLENGES_SELECT_SOCIETE</option>
+		</field>
+
+		<field
+			name="commune"
+			type="text"
+			label="COM_CHALLENGES_FIELD_COMMUNE_LABEL"
+			required="true"
+			maxlength="150"
+		/>
+
+		<field
+			name="venue"
+			type="text"
+			label="COM_CHALLENGES_FIELD_VENUE_LABEL"
+			maxlength="255"
+		/>
+
+		<field
+			name="type_id"
+			type="sql"
+			label="COM_CHALLENGES_FIELD_TYPE_ID_LABEL"
+			required="true"
+			query="SELECT id, title FROM #__challenges_types WHERE published = 1 ORDER BY ordering, title"
+			key_field="id"
+			value_field="title"
+			>
+			<option value="">COM_CHALLENGES_SELECT_TYPE</option>
+		</field>
+
+		<field
+			name="start_datetime"
+			type="calendar"
+			label="COM_CHALLENGES_FIELD_START_DATETIME_LABEL"
+			required="true"
+			translateformat="true"
+			showtime="true"
+			filter="user_utc"
+		/>
+
+		<field
+			name="registration_deadline"
+			type="calendar"
+			label="COM_CHALLENGES_FIELD_REGISTRATION_DEADLINE_LABEL"
+			translateformat="true"
+			showtime="true"
+			filter="user_utc"
+		/>
+
+		<field
+			name="description"
+			type="textarea"
+			label="COM_CHALLENGES_FIELD_DESCRIPTION_LABEL"
+			rows="6"
+			cols="60"
+		/>
+
+		<field
+			name="formula"
+			type="textarea"
+			label="COM_CHALLENGES_FIELD_FORMULA_LABEL"
+			rows="3"
+			cols="60"
+		/>
+
+		<field
+			name="conditions"
+			type="textarea"
+			label="COM_CHALLENGES_FIELD_CONDITIONS_LABEL"
+			rows="3"
+			cols="60"
+		/>
+
+		<field
+			name="fee"
+			type="number"
+			label="COM_CHALLENGES_FIELD_FEE_LABEL"
+			min="0"
+			step="0.01"
+			filter="float"
+		/>
+
+		<field
+			name="max_teams"
+			type="number"
+			label="COM_CHALLENGES_FIELD_MAX_TEAMS_LABEL"
+			min="1"
+			step="1"
+			filter="integer"
+		/>
+
+		<field
+			name="contact_name"
+			type="text"
+			label="COM_CHALLENGES_FIELD_CONTACT_NAME_LABEL"
+			required="true"
+			maxlength="150"
+		/>
+
+		<field
+			name="contact_email"
+			type="email"
+			label="COM_CHALLENGES_FIELD_CONTACT_EMAIL_LABEL"
+			maxlength="190"
+			validate="email"
+		/>
+
+		<field
+			name="contact_phone"
+			type="tel"
+			label="COM_CHALLENGES_FIELD_CONTACT_PHONE_LABEL"
+			maxlength="40"
+		/>
+
+		<field
+			name="declarant_name"
+			type="text"
+			label="COM_CHALLENGES_FIELD_DECLARANT_NAME_LABEL"
+			required="true"
+			maxlength="150"
+		/>
+
+		<field
+			name="declarant_email"
+			type="email"
+			label="COM_CHALLENGES_FIELD_DECLARANT_EMAIL_LABEL"
+			maxlength="190"
+			validate="email"
+		/>
+
+		<field
+			name="declarant_phone"
+			type="tel"
+			label="COM_CHALLENGES_FIELD_DECLARANT_PHONE_LABEL"
+			maxlength="40"
+		/>
+
+		<field
+			name="status_reason"
+			type="textarea"
+			label="COM_CHALLENGES_FIELD_STATUS_REASON_LABEL"
+			rows="4"
+			cols="30"
+		/>
+	</fieldset>
+</form>

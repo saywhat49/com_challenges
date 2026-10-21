@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
+	<update>
+		<name>Challenges</name>
+		<description>Calendrier des challenges de boule de fort</description>
+		<element>com_challenges</element>
+		<type>component</type>
+		<version>1.3.0</version>
+		<client>administrator</client>
+		<folder></folder>
+		<infourl title="Challenges">https://github.com/saywhat49/com_challenges</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/saywhat49/com_challenges/releases/download/v1.3.0/com_challenges-1.3.0.zip</downloadurl>
+		</downloads>
+		<sha256>f132c761c776574023867bc8b8d704a9a1f98cf03755745e977481c4e3d10546</sha256>
+		<targetplatform name="joomla" version="5\.[0-9]+"/>
+		<php_minimum>8.1</php_minimum>
+		<maintainer>Fédération Française de Boule de Fort</maintainer>
+		<maintainerurl>https://www.fedebouledefort.fr</maintainerurl>
+	</update>
+</updates>

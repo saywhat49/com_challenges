@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fieldset name="details">
+		<field name="id" type="hidden" default="0" readonly="true" />
+
+		<field
+			name="title"
+			type="text"
+			label="COM_CHALLENGES_FIELD_TYPE_TITLE_LABEL"
+			required="true"
+			maxlength="150"
+			size="40"
+		/>
+
+		<field
+			name="alias"
+			type="text"
+			label="JFIELD_ALIAS_LABEL"
+			description="JFIELD_ALIAS_DESC"
+			hint="JFIELD_ALIAS_PLACEHOLDER"
+			maxlength="190"
+		/>
+
+		<field
+			name="description"
+			type="textarea"
+			label="COM_CHALLENGES_FIELD_DESCRIPTION_LABEL"
+			rows="4"
+			cols="60"
+		/>
+
+		<field
+			name="ordering"
+			type="number"
+			label="COM_CHALLENGES_FIELD_ORDERING_LABEL"
+			default="0"
+			step="1"
+			filter="integer"
+		/>
+
+		<field
+			name="published"
+			type="list"
+			label="JSTATUS"
+			default="1"
+			class="form-select-color-state"
+			validate="options"
+			>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+	</fieldset>
+</form>

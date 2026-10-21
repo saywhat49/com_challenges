@@ -1,0 +1,1 @@
+-- 1.0.0 : schéma initial (voir install.mysql.utf8.sql)
